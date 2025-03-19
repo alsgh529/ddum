@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>뜸부기와 따오기</title>
+</head>
+<body>
+    <h2>뜸부기와 따오기</h2>
+
+    <label for="bird">뜸부기/따오기:</label>
+    <select id="bird">
+        <option value="뜸부기">뜸부기</option>
+        <option value="따오기">따오기</option>
+    </select>
+
+    <br><br>
+
+    <label for="repeatCount">분탕횟수:</label>
+    <input type="number" id="repeatCount" min="1" value="1">
+
+    <br><br>
+
+    <button onclick="repeatText()">뜸</button>
+
+    <h3>결과:</h3>
+    <div id="result"></div>
+
+    <script>
+        function repeatText() {
+            let bird = document.getElementById("bird").value;
+            let count = parseInt(document.getElementById("repeatCount").value);
+
+            if (count > 0) {
+                let result = bird.repeat(count);
+                document.getElementById("result").innerText = result;
+            } else {
+                document.getElementById("result").innerText = "반복 횟수를 1 이상 입력하세요.";
+            }
+        }
+    </script>
+</body>
+</html>
